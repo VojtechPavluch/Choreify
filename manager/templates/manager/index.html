@@ -1,0 +1,108 @@
+{% extends "manager/base.html" %}
+{% load static %}
+
+{% block title %}
+    Choreify
+{% endblock %}
+{% block content %}
+
+    <div class="container">
+
+        {% include "manager/includes/navbar.html" %}
+
+        <header class="main-header">
+
+            <div class="header-text-box">
+                <h1 class="main-header-title">We will help you keep your home fair and happy</h1>
+                <p class="header-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aperiam
+                    corporis culpa ex
+                    exercitationem inventore ipsam labore laborum, magnam minus natus, nemo nihil numquam omnis quis
+                    reprehenderit rerum tenetur totam?</p>
+                <a id="get-started-2" class="btn" href="{% url 'register' %}">Get Started</a>
+            </div>
+            <img class="main-page-img" src="{% static "manager/images/home-page-img.jpg" %}" alt="Two people cooking">
+        </header>
+
+        <section class="features-section">
+            <h2 class="features-title">Why should I use Choreify?</h2>
+            <div class="features-grid">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#1864ab" viewBox="0 0 256 256"
+                         class="features-icon">
+                        <rect width="256" height="256" fill="none"></rect>
+                        <rect x="40" y="40" width="176" height="176" rx="8" fill="none" stroke="#1864ab"
+                              stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></rect>
+                        <line x1="176" y1="24" x2="176" y2="56" fill="none" stroke="#1864ab" stroke-linecap="round"
+                              stroke-linejoin="round" stroke-width="16"></line>
+                        <line x1="80" y1="24" x2="80" y2="56" fill="none" stroke="#1864ab" stroke-linecap="round"
+                              stroke-linejoin="round" stroke-width="16"></line>
+                        <line x1="40" y1="88" x2="216" y2="88" fill="none" stroke="#1864ab" stroke-linecap="round"
+                              stroke-linejoin="round" stroke-width="16"></line>
+                        <polyline points="164 128 117.3 172 92 148" fill="none" stroke="#1864ab" stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="16"></polyline>
+                    </svg>
+                    <h3 class="features-subtitle">Smart chore manager</h3>
+                    <!-- TODO: Prepsat lorem ipsum text -->
+                    <p class="features-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi
+                        blanditiis corporis dicta dignissimos hic, iste itaque laborum minima minus nihil obcaecati odio
+                        provident quibusdam quos recusandae sed ullam vitae.</p>
+                </div>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#1864ab"
+                         viewBox="0 0 256 256" class="features-icon">
+                        <rect width="256" height="256" fill="none"></rect>
+                        <ellipse cx="128" cy="104" rx="104" ry="48" fill="none" stroke="#1864ab" stroke-linecap="round"
+                                 stroke-linejoin="round" stroke-width="16"></ellipse>
+                        <line x1="128" y1="152" x2="128" y2="200" fill="none" stroke="#1864ab" stroke-linecap="round"
+                              stroke-linejoin="round" stroke-width="16"></line>
+                        <path d="M24,104v48c0,24,40,48,104,48s104-24,104-48V104" fill="none" stroke="#1864ab"
+                              stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
+                        <line x1="192" y1="142.1" x2="192" y2="190.1" fill="none" stroke="#1864ab"
+                              stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+                        <line x1="64" y1="142.1" x2="64" y2="190.1" fill="none" stroke="#1864ab" stroke-linecap="round"
+                              stroke-linejoin="round" stroke-width="16"></line>
+                    </svg>
+                    <h3 class="features-subtitle">Scoring system with challenges</h3>
+                    <p class="features-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi
+                        blanditiis corporis dicta dignissimos hic, iste itaque laborum minima minus nihil obcaecati odio
+                        provident quibusdam quos recusandae sed ullam vitae.</p>
+                </div>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#1864ab"
+                         viewBox="0 0 256 256" class="features-icon">
+                        <rect width="256" height="256" fill="none"></rect>
+                        <circle cx="128" cy="128" r="96" fill="none" stroke="#1864ab" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="16"></circle>
+                        <circle cx="92" cy="108" r="12"></circle>
+                        <line x1="152" y1="108" x2="176" y2="108" fill="none" stroke="#1864ab" stroke-linecap="round"
+                              stroke-linejoin="round" stroke-width="16"></line>
+                        <path d="M169.6,152a48.1,48.1,0,0,1-83.2,0" fill="none" stroke="#1864ab" stroke-linecap="round"
+                              stroke-linejoin="round" stroke-width="16"></path>
+                    </svg>
+                    <h3 class="features-subtitle">Motivating rewards</h3>
+                    <p class="features-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi
+                        blanditiis corporis dicta dignissimos hic, iste itaque laborum minima minus nihil obcaecati odio
+                        provident quibusdam quos recusandae sed ullam vitae.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonial-section">
+            <div class="testimonial-grid">
+                <img class="testimonial-img" src="{% static "manager/images/home-page-img.jpg" %}" alt="People cooking">
+                <div class="testimonial-text">
+                    <h2 class="testimonial-title">"We enjoy every day using Choreify"</h2>
+                    <blockquote>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aperiam, aut delectus dolores
+                            ducimus, est eum expedita facere hic id ipsam laboriosam nemo nihil officia optio veritatis
+                            vitae
+                            voluptates voluptatibus.</p>
+                    </blockquote>
+                </div>
+            </div>
+            <div class="testimonial-text">
+
+            </div>
+        </section>
+    </div>
+{% endblock %}

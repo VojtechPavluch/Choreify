@@ -1,0 +1,76 @@
+{% extends "manager/base.html" %}
+
+
+{% block title %}
+    Register
+{% endblock %}
+
+
+{% block content %}
+
+
+    <div class="log-reg-container">
+
+        {% include "manager/includes/navbar.html" %}
+
+        <form class="form-container" action="" method="POST">
+            {% csrf_token %}
+            <h2 class="form-title">Sign Up</h2>
+
+            <div class="line-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#1864ab" viewBox="0 0 256 256">
+                    <rect width="256" height="256" fill="none"></rect>
+                    <circle cx="128" cy="96" r="64" fill="none" stroke="#1864ab" stroke-miterlimit="10"
+                            stroke-width="16"></circle>
+                    <path d="M31,216a112,112,0,0,1,194,0" fill="none" stroke="#1864ab" stroke-linecap="round"
+                          stroke-linejoin="round" stroke-width="16"></path>
+                </svg>
+                {{ form.username }}
+            </div>
+
+            <div class="line-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#1864ab" viewBox="0 0 256 256">
+                    <rect width="256" height="256" fill="none"></rect>
+                    <polyline points="224 56 128 144 32 56" fill="none" stroke="#1864ab" stroke-linecap="round"
+                              stroke-linejoin="round" stroke-width="16"></polyline>
+                    <path d="M32,56H224a0,0,0,0,1,0,0V192a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V56A0,0,0,0,1,32,56Z"
+                          fill="none" stroke="#1864ab" stroke-linecap="round" stroke-linejoin="round"
+                          stroke-width="16"></path>
+                    <line x1="110.5" y1="128" x2="34.5" y2="197.7" fill="none" stroke="#1864ab" stroke-linecap="round"
+                          stroke-linejoin="round" stroke-width="16"></line>
+                    <line x1="221.5" y1="197.7" x2="145.5" y2="128" fill="none" stroke="#1864ab" stroke-linecap="round"
+                          stroke-linejoin="round" stroke-width="16"></line>
+                </svg>
+                {{ form.email }}
+            </div>
+
+            <div class="line-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#1864ab" viewBox="0 0 256 256">
+                    <rect width="256" height="256" fill="none"></rect>
+                    <path d="M93.2,122.8A70.3,70.3,0,0,1,88,96a72,72,0,1,1,72,72,70.3,70.3,0,0,1-26.8-5.2h0L120,176H96v24H72v24H32V184l61.2-61.2Z"
+                          fill="none" stroke="#1864ab" stroke-linecap="round" stroke-linejoin="round"
+                          stroke-width="16"></path>
+                    <circle cx="180" cy="76" r="12"></circle>
+                </svg>
+                {{ form.password1 }}
+            </div>
+
+            <div class="line-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#1864ab" viewBox="0 0 256 256">
+                    <rect width="256" height="256" fill="none"></rect>
+                    <path d="M93.2,122.8A70.3,70.3,0,0,1,88,96a72,72,0,1,1,72,72,70.3,70.3,0,0,1-26.8-5.2h0L120,176H96v24H72v24H32V184l61.2-61.2Z"
+                          fill="none" stroke="#1864ab" stroke-linecap="round" stroke-linejoin="round"
+                          stroke-width="16"></path>
+                    <circle cx="180" cy="76" r="12"></circle>
+
+                </svg>
+                {{ form.password2 }}
+
+            </div>
+
+            <button class="form-btn" type="submit" name="create_user">Sign Up</button>
+            <p class="reg-text">Already have an account? <a class="login" href="{% url 'login' %}">Log In</a></p>
+            {{ form.errors }}
+        </form>
+    </div>
+{% endblock %}

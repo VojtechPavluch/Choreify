@@ -1,0 +1,49 @@
+{% extends "manager/base.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block content %}
+
+    <div class="log-reg-container">
+
+        {% include "manager/includes/navbar.html" %}
+
+        <form class="form-container" method="POST">
+            {% csrf_token %}
+            <h2 class="form-title">Login</h2>
+
+            <div class="line-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#1864ab" viewBox="0 0 256 256">
+                    <rect width="256" height="256" fill="none"></rect>
+                    <circle cx="128" cy="96" r="64" fill="none" stroke="#1864ab" stroke-miterlimit="10"
+                            stroke-width="16"></circle>
+                    <path d="M31,216a112,112,0,0,1,194,0" fill="none" stroke="#1864ab" stroke-linecap="round"
+                          stroke-linejoin="round" stroke-width="16"></path>
+                </svg>
+                <input class="form-input" type="text" name="username" placeholder="Username...">
+            </div>
+
+            <div class="line-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#1864ab" viewBox="0 0 256 256">
+                    <rect width="256" height="256" fill="none"></rect>
+                    <path d="M93.2,122.8A70.3,70.3,0,0,1,88,96a72,72,0,1,1,72,72,70.3,70.3,0,0,1-26.8-5.2h0L120,176H96v24H72v24H32V184l61.2-61.2Z"
+                          fill="none" stroke="#1864ab" stroke-linecap="round" stroke-linejoin="round"
+                          stroke-width="16"></path>
+                    <circle cx="180" cy="76" r="12"></circle>
+
+                </svg>
+                <input class="form-input" type="password" name="password" placeholder="Password...">
+            </div>
+
+            <button class="form-btn" type="submit" name="log_user">Log In</button>
+            <div class="login-text">
+                <p>Don't have an account? <a class="login" href="{% url 'register' %}">Sign Up</a></p>
+                {% for message in messages %}
+                    <p class="error-message">{{ message }}</p>
+                {% endfor %}
+            </div>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{
+  "001-toilet-brush.png": { "description": "Clean your toilet and get 1 point.", "event_log": "cleaned the toilet"},
+  "002-breakfast.png": { "description": "Prepare breakfast and get 2 points.", "event_log": "prepared" },
+  "003-mop.png": { "description": "Mop the floor and get 3 points",  "event_log": "moped the floor" },
+  "004-dishwasher.png": { "description": "Clean the dishwasher and get 4 points",  "event_log": "cleaned the dishwasher" },
+  "005-bin.png": { "description": "Empty a trash and get 5 points.",  "event_log": "emptied the trash" },
+  "006-food-tray.png": { "description": "Prepare dinner and get 6 points.",  "event_log": "prepared dinner" },
+  "007-vacuum-cleaner.png": { "description": "Vacuum any room and get 7 points.",  "event_log": "vacuumed" },
+  "008-shopping-cart.png": { "description": "Go grocery shopping and get 8 points.",  "event_log": "went grocery shopping" },
+  "009-washing-machine.png": { "description": "Do the laundry and get 9 points.",  "event_log": "did the landry." }
+}

@@ -1,0 +1,87 @@
+{% extends "manager/base.html" %}
+{% load static %}
+
+{% block title %}
+    Dashboard
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+
+        {% include "manager/includes/navbar.html" %}
+        <div class="dashboard-header-container">
+            <div class="events-header"><p class="dashboard-header" id="events">Events</p></div>
+            <p class="dashboard-header">Available chores</p>
+            <p class="dashboard-header reward-header">Rewards</p>
+        </div>
+
+        <div class="dashboard-main-grid">
+
+            {# Event - left container #}
+            <section class="event-container dashboard-container">
+                <div class="score">
+                    <p class="score-text">Possible score: <span class="score-possible">0</span></p>
+                    <p class="score-text">Total score: <span class="score-real">0</span></p>
+                </div>
+            </section>
+
+            {# Chores - middle container #}
+            <section class="dashboard-container dashboard-chores">
+                <div class="dashboard-secondary-grid">
+                    {% for chore in chores %}
+                        <div class="chore-container">
+                            <img class="dashboard-img" data-score="{{ forloop.counter }}"
+                                 data-event="{{ chore.event }}"
+                                 src="{% static chore.filepath %}"
+                                 alt="Chore Item">
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="description-hidden chore-description description-default description-active">
+                    <p class="">Clean the dishwasher and get 4 points</p>
+                </div>
+                {% for chore in chores %}
+                    <div class="description-hidden chore-description description-{{ chore.score }}">
+                        {{ chore.description }}
+                    </div>
+                {% endfor %}
+
+                <div class="checkbox-container">
+                    <div>
+                        <input type="checkbox" name="sms" id="sms">
+                        <label for="sms" class="chore-label">Send SMS</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="email" id="email">
+                        <label for="email" class="chore-label">Send Email</label>
+                    </div>
+                </div>
+
+                <div class="dashboard-btn-container">
+                    <a href="#" class="btn chore-btn reset-btn">Reset</a>
+                    <a href="#" class="btn chore-btn confirm-btn">Confirm</a>
+                </div>
+            </section>
+
+            {# Rewards - right container #}
+            <section class="side-container dashboard-container">
+                <div class="dashboard-rewards-grid">
+                    {% for reward in rewards %}
+                        <div class="chore-container reward hidden" data-value={% widthratio forloop.counter 1 10 %}>
+                            <img class="reward-img" data-score=8
+                                 src="{% static reward %}"
+                                 alt="Reward item">
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="dashboard-btn-container rewards-btn-container">
+                    <a href="#" class="btn chore-btn rewards-btn">Pick Reward</a>
+                </div>
+            </section>
+
+        </div>
+    </div>
+    <script src="{% static "manager/script.js" %}"></script>
+{% endblock %}
